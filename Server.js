@@ -28,32 +28,32 @@
 // // //   );
 
 
-// const express=require("express");
-// const app=express();
+const express=require("express");
+const app=express();
 
-// const bodyparser=require("body-parser") ;
-// app.use(bodyparser.json());
+const bodyparser=require("body-parser") ;
+app.use(bodyparser.json());
 
-// app.listen(3000,()=>
+app.listen(3001,()=>
 
 
-// {
-//   console.log("hi");
-// }
+{
+  console.log("hi darshan soni");
+}
 
-// );
-// app.get('/home',(req,res)=>
-// {
-//   res.send("hi inside the home");
-// })
+);
+app.get('/home',(req,res)=>
+{
+  res.send("hi inside the home");
+})
 
-// app.post("/dashboard",(req,res)=>
-// {
-//   const {name,rollno}=req.body;
-//   console.log(name,rollno);
-//   res.send("successfull print data");
-// }
-// )
+app.post("/dashboard",(req,res)=>
+{
+  const {name,rollno}=req.body;
+  console.log(name,rollno);
+  res.send("successfull print data");
+}
+)
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/mydataabse'
