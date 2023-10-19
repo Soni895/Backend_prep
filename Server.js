@@ -58,7 +58,13 @@ app.post("/dashboard",(req,res)=>
 {
   const {name,rollno}=req.body;
   console.log(name,rollno);
-  res.send("successfull print data");
+  res.status(500).json(
+    {
+      "name":name,
+      "Rollno":rollno+"darshan rollno"
+    }
+  )
+
 }
 )
 
