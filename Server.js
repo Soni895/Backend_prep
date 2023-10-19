@@ -44,7 +44,12 @@ app.listen(3001,()=>
 );
 app.get('/home',(req,res)=>
 {
-  res.send("hi inside the home");
+  res.status(500).json(
+    {
+      "name":"darshan",
+      "Rollno":"122"
+    }
+  )
 })
 
 app.post("/dashboard",(req,res)=>
