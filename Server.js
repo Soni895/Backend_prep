@@ -31,8 +31,10 @@
 const express=require("express");
 const app=express();
 
-const bodyparser=require("body-parser") ;
-app.use(bodyparser.json());
+// const bodyparser=require("body-parser") ;
+// app.use(bodyparser.json());
+
+app.use(express.json());  // for parsing application/json
 
 app.listen(3001,()=>
 
@@ -80,3 +82,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/demo_first'
   } 
 )
 
+
+app.get('*', (req, res) => {
+  res.status(404).send('Page Not Found');
+});
