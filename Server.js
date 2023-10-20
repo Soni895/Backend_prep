@@ -30,13 +30,15 @@
 
 const express=require("express");
 const app=express();
+const cors = require('cors');
+app.use(cors());
 
 // const bodyparser=require("body-parser") ;
 // app.use(bodyparser.json());
 
 app.use(express.json());  // for parsing application/json
 
-app.listen(3001,()=>
+app.listen(3000,()=>
 
 
 {
