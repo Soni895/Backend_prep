@@ -31,7 +31,13 @@
 const express=require("express");
 const app=express();
 const cors = require('cors');
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3006",
+    credentials: true, // Typo corrected
+  })
+);
+
 
 // const bodyparser=require("body-parser") ;
 // app.use(bodyparser.json());
@@ -48,7 +54,7 @@ app.listen(3000,()=>
 );
 app.get('/home',(req,res)=>
 {
-  res.status(500).json(
+  res.status(200).json(
     {
       "name":"darshan",
       "Rollno":"122"
@@ -60,11 +66,10 @@ app.post("/dashboard",(req,res)=>
 {
   const {name,rollno}=req.body;
   console.log(name,rollno);
-  res.status(500).json(
-    {
-      "name":name,
-      "Rollno":rollno+"darshan rollno"
-    }
+  res.status(200).send(
+    
+    "call successful"
+    
   )
 
 }
@@ -92,5 +97,5 @@ mongoose.connect('mongodb://127.0.0.1:27017/demo_first'
 
 
 app.get('*', (req, res) => {
-  res.status(404).send('Page Not Found darshan soni');
+  res.status(404).send('Page Not Found  hi darshan soni');
 });
