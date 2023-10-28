@@ -54,10 +54,10 @@ app.listen(3000,()=>
 );
 app.get('/home',(req,res)=>
 {
-  res.status(200).json(
+  res.json(
     {
       "name":"darshan",
-      "Rollno":"122"
+      "Rollno":"11212530"
     }
   )
 })
