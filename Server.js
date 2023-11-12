@@ -30,6 +30,7 @@
 
 const express=require("express");
 const app=express();
+const data= require("./routes/data");
 const cors = require('cors');
 app.use(
   cors({
@@ -74,6 +75,7 @@ app.post("/dashboard",(req,res)=>
 
 }
 )
+app.use("/user",data);
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://127.0.0.1:27017/demo_first'
